@@ -13,9 +13,12 @@
  */
 function createGreaterThanFilter(base) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
+  //input is a base
+  //output function test whether value is greater than base 
+//  
+return function greater(value) {
+    return base < value;
+}
     
     // YOUR CODE ABOVE HERE //
 }
@@ -29,7 +32,9 @@ function createLessThanFilter(base) {
     // YOUR CODE BELOW HERE //
     
     
-    
+    return function lessThan(value) {
+    return base > value;
+}
     
     // YOUR CODE ABOVE HERE //
 }
@@ -41,10 +46,20 @@ function createLessThanFilter(base) {
  */
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
+    //I: startsWith which is a single character
+    //O: a string startsWith character
+    //C:
+    //E:
+    // return a function
+    //set a parameter to test function with
+    return function(char) {
+       if (startsWith.toUpperCase() === char[0].toUpperCase()) {
+          return true;
+     } else {
+         return false;
+     }
+};
+
     // YOUR CODE ABOVE HERE //
 }
 
@@ -56,7 +71,13 @@ function createStartsWithFilter(startsWith) {
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
     
-    
+      return function(char) {
+       if (endsWith.toUpperCase() === char[char.length - 1].toUpperCase()) {
+          return true;
+     } else {
+         return false;
+};
+    };
     
     
     // YOUR CODE ABOVE HERE //
@@ -71,9 +92,11 @@ function createEndsWithFilter(endsWith) {
  */
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
+    var newA = [];
+    for(var i = 0; i < strings.length; i++) {
+        newA.push(modify(strings[i]));
+    }
+    return newA;
     
     // YOUR CODE ABOVE HERE //
 }
@@ -89,10 +112,28 @@ function modifyStrings(strings, modify) {
  */
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
+    //input: array
+    //output: each element in the array tested wth a boolean 
+    //:constraint
+    //:Edge case
     
-    
-    
-    
+    /**
+     * Loop over strings array
+     * pass each element a test function
+     * return a boolean value on whether an element pass or failed the test or
+     * return true if all elements pass the test
+     * 
+     */
+       
+        for (var i = 0; i < strings.length; i++) {
+            if(test(strings[i]) === false) {
+                return false;
+            }
+         }
+        
+        return true;
+
+        
     // YOUR CODE ABOVE HERE //
 }
 

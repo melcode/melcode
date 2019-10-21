@@ -1,5 +1,6 @@
 // #!/usr/bin/env node
 
+/*eslint-disable semi */
 'use strict';
 
 /**
@@ -37,7 +38,13 @@
 
 // YOUR CODE GOES BELOW HERE //
 function makeContact(id, nameFirst, nameLast) {
+var contact = {
+    id,
+    nameFirst,
+    nameLast  
+};
 
+return contact;
 } 
 
 
@@ -45,17 +52,48 @@ function makeContactList() {
     /*
      * You need something here to hold contacts. See length api for a hint:
      */
-    var contacts;
+    var contacts = [];
     
     return {
         // we implemented the length api for you //
         length: function() {
             return contacts.length;
-        }
-    }
+        }, 
+        addContact: function(contact) {
+     contacts.push(contact);
+     
+     } ,
+      findContact: function(fullName) {
+           
+           for (var i = 0; i < contacts.length; i++) {
+               if (contacts[i].nameFirst + ' ' + contacts[i].nameLast === fullName) {
+                   return contacts[i];
+               } else if (i > contacts.length) {
+                   return undefined;
+              }
+              
+          }
+       },
+        removeContact : function(contact) {
+          for(var i = 0; i < contacts.length; i++) {
+              if (contacts[i] === contact) {
+                  contacts.splice(i, 1); // splices //method changes the contents of
+                     // an array by removing existing elements and/or adding new elements.
+                     //at postion and amount
+              }
+          }
+       },  printAllContactNames: function(){
+           let output = "";
+           for(var i = 0; i < contacts.length; i++) {
+               output += contacts[i].nameFirst + ' ' + contacts[i].nameLast + '\n';
+           }
+           output = output.slice(0, -1);
+           return output;
+   }
+  }
 }
 
-
+ 
 
 
 // YOUR CODE GOES ABOVE HERE //
