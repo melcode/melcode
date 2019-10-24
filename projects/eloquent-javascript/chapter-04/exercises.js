@@ -2,34 +2,88 @@
 // range ///////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function range() {
+/*eslint-disable no-param-reassign */
+function range(start, end, step) {
+ //I: two numbers
+ //O: all numbers inbetween 2 numbers plus a a step 
+ //E: 
+ //C: must use step as a third parameter 
+ // => create an array to store range of numbers
+ 
+ var arr = []; 
+ // => should create contents without given same numbers
+ if (start === end) {
+    return []; 
+ }
+ 
+ // => if no step then do normal range iteration 
+ if(!step) {
+     for(var i = start; i <= end; i++) {
+         arr.push(i);
+     }
+ }
+ 
+ // includes step if step exist loop over and use step as incremen
+ if(step > 1) {
+     for(var i = start; i <= end; i += step) { 
+         arr.push(i);
+     }
 
+ }
+return arr; 
+ //create a condition, if start is greater than end, 
+ //loop of over start and end 
+// if(start < end) {
+//     for(var i = start; i <= end; i++) {
+//         //push numbers into array
+//         arr.push(i); 
+//     } 
+//     return arr;
+//  } 
 }
-
 ////////////////////////////////////////////////////////////////////////////////
 // sum /////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function sum() {
 
+function sum(array) {
+  var total = 0; // => create counter to add to array elements
+  for (var i = 0; i < array.length; i++) { // => loop over array to get elements    
+    total += array[i]; // => reassign total every time the loops run for every element in the array
 }
+  return total; // => return the total 
+}
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // reverseArray ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function reverseArray() {
-
+function reverseArray(array) {
+    var newA = [];
+ for (var i = array.length - 1; i > -1; i--) {
+     newA.push(array[i]);
+ }
+ return newA;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // reverseArrayInPlace /////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function reverseArrayInPlace() {
-
+function reverseArrayInPlace(array) {
+    // 1) I know I need to loop through the array. 
+    //But before figuring out where to start or end 
+    //I need to think about how I will actually reverse the elements in the array.
+// 2) The only way I can think to do this is to switch the first element with the last element,
+// then the second element with the second-to-last element, etc., until I reach the middle.
+for( var i = 0; i < array.length; i++) {
+ var newarr =  array.splice(i, array.lengrh - 1, 0);
+ console.log(newarr);
 }
-
+//return newarr; 
+}
+    
 ////////////////////////////////////////////////////////////////////////////////
 // arrayToList /////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////

@@ -34,7 +34,7 @@ console.log(noises);
 // Step 3 - Combining Step 1 and 2 ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-animal[noises] = noises;
+animal['noises'] = noises;
 noises.push("yuppy");
 
 console.log(animal);

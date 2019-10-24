@@ -1,22 +1,24 @@
+/** 0. Functions
+* The two phases to using functions: First we must ___? 
+* Next we can execute (or two other words for executing a function?) a function by?
+* 
+* 1. What’s the difference between a function’s parameters and arguments PASSED to a function?
+**/
+     //=> The functions parameters act as passengers or placeholders
+    //=> The functions aruguments are used when the function is actually invoked
+    
 /**
- * The two phases to using functions: First we must ___? 
- * Next we can execute (or two other words for executing a function?) a function by?
-* What’s the difference between a function’s parameters and arguments PASSED to a function?
-* /**
-* The functions parameters act as passengers or placeholders
-* The functions aruguments are used when the function is actually invoked
-* */
-/**
-* What’s the syntax for a NAMED function?
+* 2. What’s the syntax for a NAMED function?
 *
-**
 * ex. of a named or function declaration function
- */
+*/
    function adder(num1, num2){
        return num1 + num2;
    }
    
-/** How do we assign a function to a variable?
+/**
+ * 3.
+ * How do we assign a function to a variable?
  * ex of function expression
  */
 
@@ -24,7 +26,9 @@
      return plus1 + plus2;
  } 
  
-/** Functions can OPTIONALLY take inputs, and OPTIONALLY return a single value. 
+/**
+ * 4.
+ * Functions can OPTIONALLY take inputs, and OPTIONALLY return a single value.
 *How do we specify inputs, and how do we specify outputs?
 **/
 
@@ -34,11 +38,17 @@ function print(){
 
 return print(5); // => This function print will print whatever its passed, prints 5
  
-/** Scope: Functions can see and modify variables in parent or global scopes.
+/**
+ * 5.
+ * Scope: Functions can see and modify variables in parent or global scopes.
  *The inverse is NOT true.
  **/
 
-// The following variables are defined in the global scope
+
+/**
+ * 6.
+ * The following variables are defined in the global scope
+ */
 var num1 = 20,
     num2 = 3,
     name = 'Chamahk';
@@ -48,9 +58,12 @@ function multiply() {
   return num1 * num2;
 }
 
-multiply(); // Returns 60
+multiply(); // => Returns 60
 
-// A nested function example
+/** 
+ * 7.
+ * A nested function example
+ */
 function getScore() {
   var num1 = 2,
       num2 = 3;
@@ -62,11 +75,12 @@ function getScore() {
   return add();
 }
 
-getScore(); // Returns "Chamahk scored 5"
+getScore(); // => Returns "Chamahk scored 5"
 
 
 
 /**
+* 8.
 * Closures: Functions form closures around the data they house. 
 *
 * If an object returned from the Function and is held in memory somewhere (referenced),

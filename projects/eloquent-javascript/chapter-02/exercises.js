@@ -3,23 +3,60 @@
 // triangles ///////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function triangles() {
-
+function triangles(size) {
+var hasher = "#"; // store value of hash
+for(var i = hasher; i.length <= size; i += hasher ){ // loop over hasher compared to size
+    console.log(i); //printing value 
+ }
 }
+
+
 ////////////////////////////////////////////////////////////////////////////////
 // fizzBuzz ////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
 function fizzBuzz() {
-  
+  for(var i = 1; i <= 15; i++){
+      if(i % 3 === 0 && i % 5 === 0) {
+          console.log("fizzbuzz");
+      } else if (i % 3 === 0) {
+          console.log("fizz");
+      } else if (i % 5 === 0) {
+        console.log("buzz");
+    }  else {
+      console.log(i);
+    }
+  }
 }
-
 ////////////////////////////////////////////////////////////////////////////////
 // drawChessboard //////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function drawChessboard() {
-
+function drawChessboard(size) {
+    /**
+     *  # # # #\n
+     * # # # #\n
+     *  # # # #\n
+     * 
+     */
+    
+    
+  //create cbessboard variable to hold characters
+  var chessBoard = "";
+  //create a loop that will print length of chessBoard
+  for(var i = 0; i < size; i++){
+   for(var j = 0; j < size; j++){
+      if((i+j) % 2 === 0) {
+          chessBoard += " ";
+      } else {
+          chessBoard += "#";
+      }
+  }
+  //create a nested loop to print the width of my chessboard
+  chessBoard += '\n';
+ }
+  //use newline character to add a new line to my chessboard
+  console.log(chessBoard);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

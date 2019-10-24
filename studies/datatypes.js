@@ -105,7 +105,7 @@ var myObj = new Object(),
     obj = new Object();
 ​
 myObj.type              = 'Dot syntax';
-myObj['date created']   = 'String with space';
+myObj['date created']   = 'String with space';  //=> bracket syntax
 myObj[str]              = 'String value';
 myObj[rand]             = 'Random Number';
 myObj[obj]              = 'Object';

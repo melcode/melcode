@@ -36,9 +36,10 @@ var ch = "";
    } while (if ch === '0');     // => terminate loop if '0' is entered
   **/
  
- /** 5. For Loop (The most frequently used loop of them all)
-  
-   * It consists of three parts, separated by semicolons. 
+ /**
+ * 5. For Loop (The most frequently used loop of them all)
+ *
+ * It consists of three parts, separated by semicolons. 
  * The first is the initializer (var i = 1) which initializes the loop and is executed only once at the start. 
  * The second is a test condition (i <= 50). When a conditional expression evaluates to true, the body of the loop is executed. 
  * When false, the loop terminates. 
@@ -74,8 +75,10 @@ var ch = "";
      console.log(arr[i]);
  }
  
- /** 6. For-in loop
-  * A for-in loop iterates through the properties of an object and executes the
+ /** 
+ * 6.
+ * For-in loop
+ * A for-in loop iterates through the properties of an object and executes the
  * loop's body once for each enumerable property of the object
  * With each iteration JavaScript assigns the name of the property (a string value) to the variable item.
  * In the example below these are: name, age, and degree.

@@ -1,6 +1,6 @@
 /**
 * Operators:
-*
+* 0.
 * The language Javascript includes operators like many other languages. 
 * Operators are used to perform specific mathematical and logical computations on operands.
 * In JavaScript operators are used for compare values, perform arithmetic operations etc.
@@ -20,16 +20,12 @@ var z = 5;
 *  Some examples of arithmetic operators are:
 *  +     Adds two numeric operands.   
 *          ex.  x + y; returns 12
-
 *  - 	Subtract right operand from left operand  
 *          ex.  x - z; returns 5
-
 *  * 	Multiply two numeric operands.
 *          ex.  y * z; returns 10
-
 *  / 	Divide left operand by right operand. 
 *          ex. x / y;  returns 5
-
 *  % 	Modulus operator. Returns remainder of two operands.
 *          ex. z % 5; returns 1  
 
@@ -76,7 +72,8 @@ console.log(a <= c); // returns true
  
  
  /**
-  * 3. Assignment Operator
+  * 3.
+  * Assignment Operator
   * 
   * An assignment operator assigns a value to its left operand based on the value of its right operand.
   *  The basic assignment operator is equal (=).
@@ -110,17 +107,20 @@ console.log(a <= c); // returns true
   *  Additionally, unary operators can not be overridden, therefore their functionality is guaranteed.
   */
  
+  //.ex => 
+   
  //Ex.
-// delete - operator deletes an object, 
-  // an object's property, or an element at a specified index in an array. The syntax is:
-// typeof - operator returns a string indicating the type of the unevaluated operand
-// void - operator specifies an expression to be evaluated without returning a value.
-// instanceof - operator returns true if the specified object is of the specified object type
+/** delete - operator deletes an object, 
+* an object's property, or an element at a specified index in an array. The syntax is:
+* typeof - operator returns a string indicating the type of the unevaluated operand
+* void - operator specifies an expression to be evaluated without returning a value.
+* instanceof - operator returns true if the specified object is of the specified object type
+**/ 
  
  /**
   * 6. Ternary Operators
   * The conditional (ternary) operator is the only JavaScript operator that takes three operands.
-  *  This operator is frequently used as a shortcut for the if statement.
+  * This operator is frequently used as a shortcut for the if statement.
   */
  
  //Ex.

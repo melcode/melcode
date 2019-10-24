@@ -17,7 +17,7 @@ else if (nameFirst === 'Byron') {
 else {
    console.log('I HAVE NO NAME!');
 }
-// 3. Switch statements are used if there are multiple condition, resulting in cleaner code in some cases.
+// 3. Switch statements are used if there are multiple conditions, resulting in cleaner code in some cases.
 // With Switch statments, you start the block with the switch, case, and break, keywords
 var car = 'Hyundai';
 switch (car) {
