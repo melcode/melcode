@@ -98,7 +98,7 @@ console.log(location); // => prints: TypeError: Assignment to a constant variabl
 // 1. Ex. of hoisting
 
 // console.log(i); // => i is hoisted without its value, i is undefined
-// console.log(k); // => k is hoisted without its value
+// console.log(k); // => k is hoisted without its value, k is also undefined
 // console.log(l); // => l is hoisted without its value
 
 var i = 1;

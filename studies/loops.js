@@ -44,7 +44,7 @@ var ch = "";
  * The second is a test condition (i <= 50). When a conditional expression evaluates to true, the body of the loop is executed. 
  * When false, the loop terminates. 
  * The third part is an updater (i++) which is invoked after each iteration. 
- * The updater typically increments or decrements the loop counter.
+ * The iterator typically increments or decrements the loop counter.
  *
  */
     
@@ -62,18 +62,30 @@ var ch = "";
   */
   var arr = [];
  arr.push(1, "monkey", true, ["another", 3], null);
- 
- for (var i = 0; i < arr.length; i++) {
-     console.log(arr[i]);
+ for (var i = 0; i < arr.length; i++) { 
+     console.log(arr[i]); // => print all elements in array
+     /**
+      * 1
+      * "monkey"
+      * true
+      * ["another", 3]
+      * null
+      **/
  }
  
  /** 
   * Ex. of looping backwards over the array 
   */
  
- for(var i = arr.length - 1; i < -1; i--) {
-     console.log(arr[i]);
- }
+ for(var i = arr.length - 1; i > -1; i--) {  
+     console.log(arr[i]); // => this for loop prints the contents of the array backwards starting with last element in the array
+     /** console prints:
+      * null
+      * ["another", 3]
+      * true
+      * "monkey"
+      **/ 1
+}
  
  /** 
  * 6.
@@ -86,8 +98,13 @@ var ch = "";
 
 
 var student = { name:"Bill", age: 25, degree: "Masters" };
+
 for (var item in student) {
-   console.log((student[item]));     // => "Bill", then 25, then "Masters"
+   console.log(student[item]);     // prints values => "Bill", then 25, then "Masters"
+    console.log(item); // prints keys => name , age, degree
+    console.log(student); // prints entire object => { name:"Bill", age: 25, degree: "Masters" }
+    
+    
 }
 
 

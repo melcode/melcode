@@ -1,16 +1,36 @@
 /** 0. Functions
 * The two phases to using functions: First we must ___? 
-* Next we can execute (or two other words for executing a function?) a function by?
+*   - first we must define a function using the keyword function
+*   -  then we must call/ invoke the function
+* 
+* Ex. of function declaration
+* function print(value){
+*   console.log(value);
+}
+Ex. of function expression
+
+var adjective = function(str) {
+    console.log("You are the best " + " " + str + " " + "in town!")
+}
+
+Next we can execute (or two other words for executing a function?) a function by?
+  - calling or invoking the function by its name, by givng it a value
+*  print("Helllo"); 
+* 
 * 
 * 1. What’s the difference between a function’s parameters and arguments PASSED to a function?
 **/
-     //=> The functions parameters act as passengers or placeholders
-    //=> The functions aruguments are used when the function is actually invoked
+     // => The functions parameters act as passengers or placeholders
+     
+     function print(value){ // => the word value here is a parameter/placeholder/passenger
+        console.log(value);
+    }
+    // => The functions aruguments are used when the function is actually invoked
+    print(3); // => here the function is being invoked and the value atthis point is an argument
     
 /**
 * 2. What’s the syntax for a NAMED function?
-*
-* ex. of a named or function declaration function
+*   ex. of a named or function declaration function
 */
    function adder(num1, num2){
        return num1 + num2;
@@ -32,8 +52,8 @@
 *How do we specify inputs, and how do we specify outputs?
 **/
 
-function print(){
-    console.log(); // => example of a function that can optionally take arguments 
+function print(value){
+    console.log(value); // => example of a function that can optionally take arguments 
 }
 
 return print(5); // => This function print will print whatever its passed, prints 5
@@ -49,16 +69,17 @@ return print(5); // => This function print will print whatever its passed, print
  * 6.
  * The following variables are defined in the global scope
  */
-var num1 = 20,
-    num2 = 3,
-    name = 'Chamahk';
+var num1 = 20;
+var  num2 = 3;
+var name1 = 'Chamahk';
 
 // This function is defined in the global scope
-function multiply() {
+
+function multiply(num1, num2) {
   return num1 * num2;
 }
 
-multiply(); // => Returns 60
+multiply(30, 2); // => Returns 60
 
 /** 
  * 7.
@@ -69,7 +90,7 @@ function getScore() {
       num2 = 3;
   
   function add() {
-    return name + ' scored ' + (num1 + num2);
+    return name1 + ' scored ' + (num1 + num2);
   }
   
   return add();
@@ -91,9 +112,9 @@ var pet = function(name) {   // The outer function defines a variable called "na
   var getName = function() {
     return name;             // The inner function has access to the "name" variable of the outer 
                              //function
-  }
+  };
   return getName;            // Return the inner function, thereby exposing it to outer scopes
-}
-myPet = pet('Vivie');
-   
-myPet();                     // Returns "Vivie"
+};
+
+var myPet = pet('Vivie');
+   console.log(myPet);                     // Returns "Vivie"

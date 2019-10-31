@@ -16,25 +16,28 @@ var x = 10;
 var y = 2;
 var z = 5;
 
-/**
-*  Some examples of arithmetic operators are:
-*  +     Adds two numeric operands.   
-*          ex.  x + y; returns 12
-*  - 	Subtract right operand from left operand  
-*          ex.  x - z; returns 5
-*  * 	Multiply two numeric operands.
-*          ex.  y * z; returns 10
-*  / 	Divide left operand by right operand. 
-*          ex. x / y;  returns 5
-*  % 	Modulus operator. Returns remainder of two operands.
-*          ex. z % 5; returns 1  
 
-*  ++	Increment operator. Increase operand value by one.
-*          ex. x++; returns 11
+//  Some examples of arithmetic operators are:
+  //+     Adds numeric operands.   
+        console.log(x + y); // returns => 12
+        
+//  - 	Subtract right operand from left operand  
+        console.log(x - z); // => returns 5
+        
+//  * 	Multiply two numeric operands.
+        console.log(y * z); // => returns 10
+        
+//   / 	Divide left operand by right operand. 
+        console.log(x / y); // => returns 5
+        
+//  % 	Modulus operator. Returns remainder of two operands.
+        console.log(z % 5); // =>  returns 1  
 
-*  --	Decrement operator. Decrease value by one. 
-*          ex. x--; returns 9
-**/ 
+//   ++	Increment operator. Increase operand value by one.
+        console.log(x++); // => returns 11
+
+//   --	Decrement operator. Decrease value by one. 
+        console.log(x--); // => returns 9
  
  
 /**
@@ -43,6 +46,7 @@ var z = 5;
  */
 
 /**
+ * 
  ==   Compares the equality of two operands without considering type.
 ===	  Compares equality of two operands with type.
 !=	  Compares inequality of two operands.
@@ -52,23 +56,25 @@ var z = 5;
 <=	  Checks whether left operand is less than or equal to right operand. If yes then returns true otherwise false
 */
 
-/**
-Ex.
-var a = 5, b = 10, c = "5";
+
+//Ex.
+var a = 2;
+var b = 10; 
+var c = "5";
 var x = a;
 
 
-console.log(a == c); // returns true
-console.log(a === c; // returns false
-console.log(a == x); // returns true
-console.log(a != b); // returns true
-console.log(a > b); // returns false
-console.log(a < b); // returns true
-console.log(a >= b); // returns false
-console.log(a <= b); // returns true
-console.log(a >= c); // returns true
-console.log(a <= c); // returns true
-**/ 
+console.log(a == c); // => returns true
+console.log(a === c); //  => returns false
+console.log(a == x); //  => returns true
+console.log(a != b); //  => returns true
+console.log(a > b); //  => returns false
+console.log(a < b); //  => returns true
+console.log(a >= b); //  => returns false
+console.log(a <= b); //  => returns true
+console.log(a >= c); //  => returns true
+console.log(a <= c); //  => returns true
+
  
  
  /**
@@ -106,8 +112,7 @@ console.log(a <= c); // returns true
   * Unary operators are more efficient than standard JavaScript function calls.
   *  Additionally, unary operators can not be overridden, therefore their functionality is guaranteed.
   */
- 
-  //.ex => 
+  
    
  //Ex.
 /** delete - operator deletes an object, 
@@ -117,6 +122,18 @@ console.log(a <= c); // returns true
 * instanceof - operator returns true if the specified object is of the specified object type
 **/ 
  
+  //.ex => 
+  var obj = {
+   
+   firstName: "New",
+   lastName: "Orleans"
+   
+  }
+ 
+console.log(obj) // => prints {firstName: "New", lastName: "Orleans"} 
+ delete obj.firstName   // => deletes object.firstName
+console.log(obj) // => prints {lastName: "Orleans"}
+
  /**
   * 6. Ternary Operators
   * The conditional (ternary) operator is the only JavaScript operator that takes three operands.
@@ -126,3 +143,8 @@ console.log(a <= c); // returns true
  //Ex.
  //  condition ? value if true : value if false
  
+ var age = 4;
+ 
+ var kindergarten_eligible = (age < 5) ? "Too young" : "Old enough";
+ 
+ console.log(kindergarten_eligible); // => Prints Too Young

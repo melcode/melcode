@@ -71,57 +71,89 @@ function reverseArray(array) {
 // reverseArrayInPlace /////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
+// function reverseArrayInPlace(array) {
+//     // 1) I know I need to loop through the array. 
+//     //But before figuring out where to start or end 
+//     //I need to think about how I will actually reverse the elements in the array.
+// // 2) The only way I can think to do this is to switch the first element with the last element,
+// // then the second element with the second-to-last element, etc., until I reach the middle.
+// for( var i = 0; i < array.length; i++) {
+//  var newarr =  array.splice(i, array.lengrh - 1, 0);
+//  console.log(newarr);
+// }
+// //return newarr; 
+// }
+
 function reverseArrayInPlace(array) {
-    // 1) I know I need to loop through the array. 
-    //But before figuring out where to start or end 
-    //I need to think about how I will actually reverse the elements in the array.
-// 2) The only way I can think to do this is to switch the first element with the last element,
-// then the second element with the second-to-last element, etc., until I reach the middle.
-for( var i = 0; i < array.length; i++) {
- var newarr =  array.splice(i, array.lengrh - 1, 0);
- console.log(newarr);
-}
-//return newarr; 
+  for (let i = 0; i < Math.floor(array.length / 2); i++) {
+    let old = array[i];
+    array[i] = array[array.length - 1 - i];
+    array[array.length - 1 - i] = old;
+  }
+  return array;
 }
     
 ////////////////////////////////////////////////////////////////////////////////
 // arrayToList /////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function arrayToList() {
-
+function arrayToList(array) {
+  let list = null;
+  for (let i = array.length - 1; i >= 0; i--) {
+    list = {value: array[i], rest: list};
+  }
+  return list;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // listToArray /////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function listToArray() {
-
+function listToArray(list) {
+  let array = [];
+  for (let node = list; node; node = node.rest) {
+    array.push(node.value);
+  }
+  return array;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // prepend /////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function prepend() {
-
+function prepend(value, list) {
+  return {value, rest: list};
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // nth /////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function nth() {
-
+function nth(list, n) {
+  if (!list) return undefined;  
+  else if (n == 0) return list.value;
+  else return nth(list.rest, n - 1);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // deepEqual ///////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function deepEqual() {
+function deepEqual(a, b) {
+  if (a === b) return true;
+  
+  if (a == null || typeof a != "object" ||
+      b == null || typeof b != "object") return false;
 
+  let keysA = Object.keys(a), keysB = Object.keys(b);
+
+  if (keysA.length != keysB.length) return false;
+
+  for (let key of keysA) {
+    if (!keysB.includes(key) || !deepEqual(a[key], b[key])) return false;
+  }
+
+  return true;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
