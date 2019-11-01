@@ -417,7 +417,7 @@ _.pluck = function(array, prop) {
  *   _.every([2,4,6], function(e){return e % 2 === 0}) -> true
  *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
  */
- 
+
 _.every = function(collection, action) {
     var flag = null;
     if (!action) {
@@ -429,7 +429,7 @@ _.every = function(collection, action) {
     }
     else {
         _.each(collection, function(e, i, a) {
-            if(!action(e, i, a)) {
+            if (!action(e, i, a)) {
                 flag = false;
             }
         });
@@ -473,32 +473,32 @@ _.some = function(collection, func) {
                 flag = true;
             }
         });
-    } 
-    
+    }
+
     else {
         if (Array.isArray(collection)) {
             if (_.reject(collection, func).length === collection.length) {
                 return false;
-            } 
+            }
             else {
                 return true;
             }
-        } 
+        }
         else {
             for (var key in collection) {
                 if (collection[key]) {
                     flag = true;
                 }
             }
-        }   
+        }
     }
-    
+
     if (flag === true) {
         return true;
     }
     else {
         return false;
-    }    
+    }
 };
 
 
@@ -535,9 +535,8 @@ _.reduce = function(array, action, startValue) {
     }
 
     for (; i < array.length; i++) {
-        previousResult = action(previousResult, array[i], i, array);
+        previousResult = action(previousResult, array[i], i);
     }
-
     return previousResult;
 };
 
@@ -557,17 +556,33 @@ _.reduce = function(array, action, startValue) {
  *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
  */
 
-_.extend = function(copyTo) {
+_.extend = function(object1, ...objects) {
 
-    var copyFromObjects = Array.prototype.slice.call(arguments, 1);
-    for (var i = 0; i < copyFromObjects.length; i++) {
-        var copyFrom = copyFromObjects[i];
-        for (var key in copyFrom) {
-            copyTo[key] = copyFrom[key];
+    // var copyFromObjects = Array.prototype.slice.call(arguments);
+    // copyTo
+    // // will make slice the this object for call . It the same for any method in javascript. 
+    // // The calling object is the this object for the method being called. 
+    // // So to create the bound slice shortcut funr4ction with our simple bind function we need to bind slice to call 
+    // //console.log(copyFromObjects);
+
+    // for (var i = 0; i < copyFromObjects.length; i++) {
+    //     var copyFrom = copyFromObjects[i];
+    //   //  console.log(copyFrom);
+    //     for (var key in copyFrom) {
+    //         copyTo[key] = copyFrom[key];
+    //     //    console.log(copyTo[key]);
+    //     }
+    // }
+    // console.log(copyTo);
+    // return copyTo;
+
+    for (let i = 0; i < objects.length; i++) {
+        for (let key in objects[i]) {
+            let currentObjectInLoop = objects[i];
+            object1[key] = currentObjectInLoop[key];
         }
     }
-    return copyTo;
-
+    return object1;
 };
 
 //////////////////////////////////////////////////////////////////////
