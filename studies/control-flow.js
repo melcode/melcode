@@ -54,3 +54,4 @@ switch (car) {
 // if there is no value like 0, NaN, null, an empty string, or undefined the value is "falsey"
 // But if there is some value or type they it is considered "truthy"
 
+ 

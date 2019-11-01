@@ -182,4 +182,4 @@ var x = 10;
 var y = 'abc';
 var a = x;
 var b = y;
-console.log(x, y, a, b); // -> 10, 'abc', 10, 'abc'
+console.log(x, y, a, b); // -> 10, 'abc', 10, 'abc' 

@@ -117,4 +117,4 @@ var pet = function(name) {   // The outer function defines a variable called "na
 };
 
 var myPet = pet('Vivie');
-   console.log(myPet);                     // Returns "Vivie"
+   console.log(myPet);                     // Returns "Vivie"  

@@ -148,3 +148,5 @@ console.log(obj) // => prints {lastName: "Orleans"}
  var kindergarten_eligible = (age < 5) ? "Too young" : "Old enough";
  
  console.log(kindergarten_eligible); // => Prints Too Young
+ 
+ 

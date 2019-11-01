@@ -30,6 +30,7 @@ console.log(newStr); // => prints hello world
 * .slice() is a method that requires an argument be passed in
 */
 
+
 //Ex.
 var myString = "hello!";
 console.log(myString.slice(0, 2)); 
