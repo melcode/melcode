@@ -5,7 +5,7 @@
 * String literals (denoted by double or single quotes) 
 * String manipulation with operators
 */
-
+  
 var str = "hello";
 var newStr = str + " world!";
 console.log(newStr); // => prints hello world
@@ -27,7 +27,7 @@ console.log(newStr); // => prints hello world
 
 var lastChar = newStr[newStr.length - 1]; 
 
-console.log(lastChar); // => brings back the last character of the new str variable
+console.log(lastChar); // => brings back the last character of the new str variable  
 
 /** 2.
 * .toUpperCase() and .slice() are methods that manipulate strings

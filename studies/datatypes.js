@@ -23,7 +23,7 @@ console.log(4.5 + 3.4); // => prints 7.9
 
 k = 1 // k now has a value of the number 1
 i = 5 // i now has a value of the number 5
-
+   
 // And + Infinity or -Infinity  
 
 var maxNumber = Math.pow(10, 1000); // max positive number
@@ -33,7 +33,7 @@ if (maxNumber === Infinity) {
   // expected output: "Let's call it Infinity!"
 }
 
-console.log(1 / maxNumber);
+console.log(1 / maxNumber);   
 // expected output: 0 
 
 // There are some special cases that you can us as NaN(not-a-number)
