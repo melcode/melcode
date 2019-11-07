@@ -52,11 +52,12 @@ Next we can execute (or two other words for executing a function?) a function by
 *How do we specify inputs, and how do we specify outputs?
 **/
 
-function print(value){
-    console.log(value); // => example of a function that can optionally take arguments 
+function printer(value){
+    return value; // => example of a function that can optionally take arguments 
 }
+printer();
 
-return print(5); // => This function print will print whatever its passed, prints 5
+ // => This function print will print whatever its passed, prints 5
  
 /**
  * 5.
@@ -69,8 +70,8 @@ return print(5); // => This function print will print whatever its passed, print
  * 6.
  * The following variables are defined in the global scope
  */
-var num1 = 20;
-var  num2 = 3;
+var num11 = 20;
+var num22 = 3;
 var name1 = 'Chamahk';
 
 // This function is defined in the global scope

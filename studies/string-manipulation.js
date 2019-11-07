@@ -12,8 +12,8 @@ console.log(newStr); // => prints hello world
 
 /**
 * 1.
-* String operators are comparison operators that can be used on string values
-* and strings also work with the concatentation operator (+)
+* String operators are operators that can be used to manipulate string values.
+* Strings also work with the concatentation operator (+)
 * concantentation takes two strings values and returns a string that joins the operand strings
 * in both of these above examples, we conjoin two strings using the + operator
 * string manipulation With string methods
@@ -24,6 +24,10 @@ console.log(newStr); // => prints hello world
 * one can also access individual characters using array syntax
 * The expression message[6] goes to the character of the String at the 6th index held in the which is a
 */
+
+var lastChar = newStr[newStr.length - 1]; 
+
+console.log(lastChar); // => brings back the last character of the new str variable
 
 /** 2.
 * .toUpperCase() and .slice() are methods that manipulate strings
@@ -64,3 +68,11 @@ planet[3]; // => prints "l"
 //Ex.
 console.log(planet.toLowerCase()); // => prints "world"
 console.log(planet.toUpperCase()); // => prints "HELLO"
+
+
+var strPlant = str.concat( planet); 
+console.log(strPlant); // => prints "Hello World" 
+//concat method joins two or more 
+
+
+

@@ -98,7 +98,7 @@ console.log(location); // => prints: TypeError: Assignment to a constant variabl
 // 1. Ex. of hoisting
 
 // console.log(i); // => i is hoisted without its value, i is undefined
-// console.log(k); // => k is hoisted without its value, k is also undefined
+// console.log(k); // => Let declared vairlables also wont be available until the interpreter reaches the line where it was declared
 // console.log(l); // => l is hoisted without its value
 
 var i = 1;
@@ -130,3 +130,4 @@ function adder(num1, num2){
 var adding = function(num, numm){
     return num + numm;
 };  
+

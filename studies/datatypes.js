@@ -34,7 +34,7 @@ if (maxNumber === Infinity) {
 }
 
 console.log(1 / maxNumber);
-// expected output: 100
+// expected output: 0 
 
 // There are some special cases that you can us as NaN(not-a-number)
 

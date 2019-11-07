@@ -66,32 +66,117 @@ var youngestCustomer = function (array){
    }); return ages[0].name;
 };
 
+
 var averageBalance = function(array){
-    //first we want to get all the customers balances 
- var balances = _.reduce(array, function(previousResult, customer){
-        if(customer.balance === 'balance'){
-            previousResult.push(customer.balance);
-            console.log(previousResult);
-        }
-            return previousResult;
+
+   var averageB =  _.reduce(array, function(previousValue, customer, i, array){
+           var remove = customer.balance.slice(1);  //sliced off dollar signs
+           //console.log(remove);
+           //eliminate special characaters in customers balances
+           remove = remove.split(",").join("");// split and join to remove commas
+           remove = Number.parseFloat(remove);
+           previousValue += remove;
+           //console.log(remove);
+           return previousValue;
+
+    }, 0);
+    return averageB  / array.length; // to get the average 
+
+};
+
+
+var firstLetterCount = function (array, letter) {
+   return _.reduce(array, function(count, array) {
+       if(array.name.charAt(0).toLowerCase() === letter.toLowerCase()) {
+           count += 1;
+           return count;
+       }
+       return count;
+   }, 0);
+};
+
+var friendFirstLetterCount = function (array, name, letter) {
+   return _.reduce(array, function(count, array) {
+       if(array.name === name) {
+           for (var i = 0; i < array.friends.length; i ++){
+               if(array.friends[i].name.charAt(0).toLowerCase() === letter.toLowerCase()) count += 1;
+           }
+           return count;
+           }
+           return count;
+           }, 0);
+};
+
+
+var friendsCount = function(array, name){
+    //access customers friends array 
+    //check to see if given name is in their friends list
+    
+    var friends = _.reduce(array, function(previousValue, customer, i, array){
+        _.each(customer.friends, function(friend){
+            if(friend.name === name) {
+                previousValue.push(customer.name);
+            }
+        });
+        return previousValue;
     }, []);
-
-    console.log(balances);
+    return friends;
 };
 
-var firstLetterCount = function(array){
+var topThreeTags = function(array){
+ let topTags = [];
+    let counter = {};
+    // loop through array
+    for(let i = 0; i < array.length; i++) {
+        // loop through the tags 
+        for(let b = 0; b < array[i].tags.length; b++) {
+            // set all the tags to variable
+            let customerTag = array[i].tags[b];
+            // if tags occurs more than once add more than 1 to object 
+            if(counter[customerTag]) {
+                counter[customerTag]++;
+                
+            }
+            else {
+                // if it occurs once then assign 1 to it 
+                counter[customerTag] = 1;
+            }
+        }
+    }
     
+    let order = [];
+    for(let key in counter) {
+        // push the keys in values seperate inside the array 
+        order.push([key, counter[key]]);
+        
+    }
+    // sort the array 
+    let sortedTags = order.sort((a, b) => a[1] - b[1]);
+    // take out the last three tags from the array 
+    let topThree = sortedTags.slice(sortedTags.length - 3);
+    console.log(topThree);
+    //push the to top tags into the array 
+    topTags.push(topThree[0][0], topThree[1][0], topThree[2][0]);
+    console.log(topTags);
+    return topTags; 
 };
 
-var friendFirstLetterCount = function(array){
+var genderCount = function(array){
     
+   var summaryOfGenders = _.reduce(array, function(summary, customer){ 
+    if(customer.gender in summary){
+    summary[customer.gender]++;
+  } else {
+    summary[customer.gender] = 1;
+  } 
+  return summary;
+}, {});
+return summaryOfGenders;
+
+
+
+
 };
-
-var friendsCount;
-
-var topThreeTags;
-
-var genderCount;
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
