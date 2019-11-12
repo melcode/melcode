@@ -106,7 +106,7 @@ let k = 2;
 const l = 3; // => const wont be available until the where its initialized is reached
 
 //The variables listed above will be hoisted to the top of the page without there values;
-  
+      
 console.log(i); // => here prints 1
 console.log(k); // => here prints 2
 console.log(l); // => here prints 3

@@ -5,7 +5,7 @@
 * String literals (denoted by double or single quotes) 
 * String manipulation with operators
 */
-  
+    
 var str = "hello";
 var newStr = str + " world!";
 console.log(newStr); // => prints hello world

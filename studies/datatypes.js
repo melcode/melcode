@@ -27,7 +27,7 @@ i = 5 // i now has a value of the number 5
 // And + Infinity or -Infinity  
 
 var maxNumber = Math.pow(10, 1000); // max positive number
-
+   
 if (maxNumber === Infinity) {
   console.log("Let's call it Infinity!");
   // expected output: "Let's call it Infinity!"

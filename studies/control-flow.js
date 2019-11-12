@@ -33,7 +33,7 @@ switch (car) {
 }
 // you can also run one block of code for more than one case
 var car = "Maxima";
-switch (car) {
+switch (car) {     
    case 'Nissan':
    case 'Honda':
    case 'Toyota':
