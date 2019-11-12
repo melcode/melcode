@@ -98,12 +98,14 @@ console.log(location); // => prints: TypeError: Assignment to a constant variabl
 // 1. Ex. of hoisting
 
 // console.log(i); // => i is hoisted without its value, i is undefined
-// console.log(k); // => Let declared vairlables also wont be available until the interpreter reaches the line where it was declared
-// console.log(l); // => l is hoisted without its value
+// console.log(k); // => Let  don't get hoisted (temporal deadzone)
+//declared vairlables wont be available until the interpreter reaches the line where it was declared
+// console.log(l); // const don't get hoisted (temporal deadzone)
+// => const wont be available until the where its initialized is reached
 
 var i = 1;
 let k = 2;
-const l = 3; // => const wont be available until the where its initialized is reached
+const l = 3; 
 
 //The variables listed above will be hoisted to the top of the page without there values;
       
